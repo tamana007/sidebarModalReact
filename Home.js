@@ -4,6 +4,7 @@ import { Appcontext,useGlobal } from './context'
 
 
 const Home = () => {
+  const {openSider,openModal}=useGlobal();
   //::::::::::Use the data came from AppContext:::::::
   // const useData=useContext(Appcontext);
   // :Instead Above we can write our custom hook 
@@ -11,8 +12,8 @@ const Home = () => {
   console.log(useData);
   return (
    <main>
-    <button className='sidebar-toggle'><FaBars/></button>
-    <button className='btn'>Show Modal</button>
+    <button className='sidebar-toggle' onClick={openSider}><FaBars/></button>
+    <button className='btn' onClick={openModal}>Show Modal</button>
    </main>
   )
 }

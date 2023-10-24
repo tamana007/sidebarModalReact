@@ -3,8 +3,12 @@ import logo from './logo.svg'
 import { FaTimes } from 'react-icons/fa'
 import { social, links } from './data'
 import { icons } from 'react-icons/lib'
+// import { Appcontext,useContext} from "./content: ";
+// import {Appcontext} from 'react'
 
 const Sidebar = () => {
+ 
+  
   return (
     <>
     <aside className={`sidebar `}>

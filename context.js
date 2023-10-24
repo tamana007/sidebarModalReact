@@ -4,7 +4,28 @@ import React, { useState, useContext } from 'react'
 const Appcontext=React.createContext();
 //::::::::::Provide Your Context for use Inside a component:::::::::::
 const AppProvider=({children})=>{
-  return<Appcontext.Provider value='hi'>{children}</Appcontext.Provider>;};
+  const[isSidebarOpen,setIsSidebarOpen]=useState(false);
+  const[isModalOpen,setIsModalOpen]=useState(false);
+
+  const openSider=()=>{
+    setIsSidebarOpen(true);
+  }
+  const closeSidebar=()=>{
+    setIsSidebarOpen(false);
+  }
+  //:::::::;For modal as well:::::::
+
+  const openModal=()=>{
+    setIsModalOpen(true); 
+    console.log('opened');
+  }
+  const closeModal=()=>{
+    setIsModalOpen(false);
+  }
+
+
+
+  return<Appcontext.Provider value={{closeSidebar,openSider,openModal,closeModal}}>{children}</Appcontext.Provider>;};
   // //::::::the provider for context inside the component like a wrapper
 
 //::::::::::::Custom Hook:::::::::::
