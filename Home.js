@@ -4,8 +4,8 @@ import { FaBars } from 'react-icons/fa'
 const Home = () => {
   return (
    <main>
-    <button className='sidebar-toggle'>Sidebar</button>
-    <button className='btn'>Show modal</button>
+    <button className='sidebar-toggle'><FaBars/></button>
+    <button className='btn'>Show Modal</button>
    </main>
   )
 }
