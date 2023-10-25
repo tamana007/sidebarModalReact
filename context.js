@@ -1,39 +1,49 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext } from "react";
 
 //:::::::::Create Context First:::::::::::::
-const Appcontext=React.createContext();
+const Appcontext = React.createContext();
 //::::::::::Provide Your Context for use Inside a component:::::::::::
-const AppProvider=({children})=>{
-  const[isSidebarOpen,setIsSidebarOpen]=useState(false);
-  const[isModalOpen,setIsModalOpen]=useState(false);
+const AppProvider = ({ children }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openSider=()=>{
+  const openSider = () => {
     setIsSidebarOpen(true);
-    console.log('sidebar opened');
-  }
-  const closeSidebar=()=>{
-    setIsSidebarOpen(true);
-  }
+    console.log("sidebar opened");
+  };
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
   //:::::::;For modal as well:::::::
 
-  const openModal=()=>{
-    setIsModalOpen(true); 
-    console.log('opened');
-  }
-  const closeModal=()=>{
+  const openModal = () => {
+    setIsModalOpen(true);
+    console.log("opened");
+  };
+  const closeModal = () => {
     setIsModalOpen(false);
-    
-  }
+  };
 
-
-
-  return<Appcontext.Provider value={{closeSidebar,openSider,openModal,closeModal}}>{children}</Appcontext.Provider>};
-  // //::::::the provider for context inside the component like a wrapper
+  return (
+    <Appcontext.Provider
+      value={{
+        closeSidebar,
+        openSider,
+        openModal,
+        closeModal,
+        isModalOpen,
+        isSidebarOpen,
+      }}
+    >
+      {children}
+    </Appcontext.Provider>
+  );
+};
+// //::::::the provider for context inside the component like a wrapper
 
 //::::::::::::Custom Hook:::::::::::
-const useGlobal=()=>{
+const useGlobal = () => {
   return useContext(Appcontext);
-}
+};
 
-export{Appcontext,AppProvider,useGlobal};
-
+export { Appcontext, AppProvider, useGlobal };
