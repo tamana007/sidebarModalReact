@@ -9,9 +9,10 @@ const AppProvider=({children})=>{
 
   const openSider=()=>{
     setIsSidebarOpen(true);
+    console.log('sidebar opened');
   }
   const closeSidebar=()=>{
-    setIsSidebarOpen(false);
+    setIsSidebarOpen(true);
   }
   //:::::::;For modal as well:::::::
 
@@ -21,11 +22,12 @@ const AppProvider=({children})=>{
   }
   const closeModal=()=>{
     setIsModalOpen(false);
+    
   }
 
 
 
-  return<Appcontext.Provider value={{closeSidebar,openSider,openModal,closeModal}}>{children}</Appcontext.Provider>;};
+  return<Appcontext.Provider value={{closeSidebar,openSider,openModal,closeModal}}>{children}</Appcontext.Provider>};
   // //::::::the provider for context inside the component like a wrapper
 
 //::::::::::::Custom Hook:::::::::::

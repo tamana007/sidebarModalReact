@@ -3,15 +3,17 @@ import logo from './logo.svg'
 import { FaTimes } from 'react-icons/fa'
 import { social, links } from './data'
 import { icons } from 'react-icons/lib'
+import { useGlobal } from './context'
 // import { Appcontext,useContext} from "./content: ";
 // import {Appcontext} from 'react'
 
 const Sidebar = () => {
+  const {isSidebarOpen,}=useGlobal();
  
   
   return (
     <>
-    <aside className={`sidebar `}>
+    <aside className={`${isSidebarOpen? 'sidebar show-sidebar':'sidebar '} `}>
       <div className='sidebar-header'>
         <img src={logo}></img>
         <button className='close-btn'><FaTimes/></button>

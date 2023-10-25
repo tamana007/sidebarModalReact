@@ -12,7 +12,7 @@ const Home = () => {
   console.log(useData);
   return (
    <main>
-    <button className='sidebar-toggle' onClick={openSider}><FaBars/></button>
+    <button className='sidebar-toggle' onClick={()=>{openSider()}}><FaBars/></button>
     <button className='btn' onClick={openModal}>Show Modal</button>
    </main>
   )
