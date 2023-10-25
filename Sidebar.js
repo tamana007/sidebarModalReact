@@ -8,7 +8,7 @@ import { useGlobal } from './context'
 // import {Appcontext} from 'react'
 
 const Sidebar = () => {
-  const {isSidebarOpen,}=useGlobal();
+  const {isSidebarOpen,closeSidebar}=useGlobal();
  
   
   return (
@@ -16,7 +16,7 @@ const Sidebar = () => {
     <aside className={`${isSidebarOpen? 'sidebar show-sidebar':'sidebar '} `}>
       <div className='sidebar-header'>
         <img src={logo}></img>
-        <button className='close-btn'><FaTimes/></button>
+        <button className='close-btn' onClick={closeSidebar}><FaTimes/></button>
       </div>
       <ul className='links'>
       {links.map((link)=>{

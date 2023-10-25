@@ -13,7 +13,7 @@ const Modal = () => {
     // isModalOpen? 'modal-overlay show-modal':'modal-overlay'}`}
   >
     <div className='modal-container'>
-      <h3>{isModalOpen}</h3>
+      <h3>Modal Content</h3>
       <button className='close-modal-btn' onClick={closeModal}><FaTimes/></button>
     </div>
   </div>
